@@ -10,7 +10,7 @@ function WalletCard({ wave }) {
       const { ethereum } = window;
 
       if (!ethereum) {
-        setErrorMessage('Kindly install MetaMask!');
+        setErrorMessage('Kindly install MetaMask wallet extension!');
         return;
       }
 
@@ -22,6 +22,14 @@ function WalletCard({ wave }) {
     }
   };
 
+  window.ethereum.on('accountsChanged', (accounts) => {
+    setDefaultAccount(accounts[0]);
+  });
+
+  window.ethereum.on('chainChanged', () => {
+    window.location.reload();
+  });
+
 
   return (
     <div className="dataContainer">
@@ -30,7 +38,7 @@ function WalletCard({ wave }) {
           className="waveButton"
           onClick={() => connectWallet()}
         >
-          Connect MetaMask wallet
+          Connect MetaMask Wallet
         </button>
       ) : (
           <button
