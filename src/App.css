@@ -29,6 +29,17 @@
   margin-top: 16px;
   padding: 8px;
   border: 0;
+  font-weight: 600;
+  color: #f5841f;
   border-radius: 5px;
-  
+}
+
+.errorMessage {
+  color: red;
+  text-align: center;
+}
+
+.defaultAccount {
+  color: green;
+  text-align: center;
 }

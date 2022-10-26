@@ -1,5 +1,6 @@
 import * as React from "react";
 import { ethers } from "ethers";
+import WalletCard from './components/WalletCard';
 import './App.css';
 
 export default function App() {
@@ -9,7 +10,7 @@ export default function App() {
   }
   
   return (
-    <div className="mainContainer">
+    <main className="mainContainer">
 
       <div className="dataContainer">
         <div className="header">
@@ -20,10 +21,8 @@ export default function App() {
         I am Simo and I am a full stack developer isn't that awesome? Connect your Ethereum wallet and wave at me with your favorite pokemon!
         </div>
 
-        <button className="waveButton" onClick={wave}>
-          Wave at Me
-        </button>
+        <WalletCard wave={wave} />
       </div>
-    </div>
+    </main>
   );
 }
