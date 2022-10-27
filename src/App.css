@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap');
+
 * {
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -9,11 +12,82 @@ body {
   background: #1d1d1d;
 }
 
-.mainContainer {
-  display: flex;
-  justify-content: center;
+.main-container {
+  position: relative;
   width: 100%;
-  margin-top: 64px;
+  height: 100vh;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 2px;
+  color: white;
+}
+
+.logo {
+  font-family: 'Fredoka One', cursive;
+  color: #f5841f;
+  margin-left: 20px;
+}
+
+.connection-status {
+  display: flex;
+  margin-right: 20px;
+}
+
+.connection-icon {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  margin: 0 8px 0 0;
+  text-align: center;
+  background: #333;
+  border: 1px solid #9b9b9b;
+  border-radius: 50%;
+  transition: .5s;
+}
+
+.connection-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #ffcc23;
+  transition: .5s;
+  transform: scale(.9);
+  z-index: -1;
+}
+
+.connection-icon.active::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px #ffcc23;
+}
+
+.connection-icon.active {
+  color: #ffcc23;
+  border: none;
+  box-shadow: 0 0 2px #ffcc23;
+  text-shadow: 0 0 2px #ffcc23;
+}
+
+.content-wrapper {
+  margin: 0;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .dataContainer {
@@ -30,10 +104,19 @@ body {
   font-weight: 600;
 }
 
-.bio {
+.greeting {
   text-align: center;
   color: #f5841f;
-  margin-top: 16px;
+}
+
+.bio {
+  text-align: center;
+  color: #ffffff;
+  margin: 16px 0 10% 0;
+}
+
+.bio p {
+  margin: 0;
 }
 
 .waveButton {
@@ -58,7 +141,7 @@ body {
   background: linear-gradient(45deg, #fb0094, #00f, #0f0, #ff0, #f00,
   #fb0094, #00f, #0f0, #ff0, #f00);
   background-size: 400%;
-  opacity: 0;
+  opacity: 1;
   transition: 0.5s ;
   animation: animate 20s linear infinite;
 }
@@ -73,7 +156,7 @@ body {
   background: linear-gradient(45deg, #fb0094, #00f, #0f0, #ff0, #f00,
   #fb0094, #00f, #0f0, #ff0, #f00);
   background-size: 400%;
-  opacity: 0;
+  opacity: 1;
   filter: blur(10px);
   transition: 0.5s ;
   animation: animate 20s linear infinite;
@@ -81,7 +164,7 @@ body {
 
 .waveButton:hover::before,
 .waveButton:hover::after {
-  opacity: 1;
+  opacity: 0;
 }
 
 @keyframes animate {
@@ -131,7 +214,7 @@ body {
 }
 
 .defaultAccount {
-  color: green;
+  color: rgb(0, 163, 204);
   text-align: center;
   font-size: 12px;
 }
