@@ -25,7 +25,7 @@ export default function App() {
 
           <div className="bio">
             <p>I am Simo, a full stack developer aspiring to be a Smartchain developer.</p>
-            <p>Connect your Ethereum wallet and wave at me with your favorite pokemon!</p>
+            <p>Connect your Ethereum wallet and tag me with your favorite pokemon!</p>
           </div>
 
           <WalletCard

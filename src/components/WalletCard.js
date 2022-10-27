@@ -3,13 +3,12 @@ import React, { useState } from 'react'
 function WalletCard({ wave, isConnected, setIsConnected}) {
   const [errorMessage, setErrorMessage] = useState(null);
   const [defaultAccount, setDefaultAccount] = useState(null);
+  const { ethereum } = window;
   
   const connectWallet = async () => {
     try {
-      const { ethereum } = window;
-
       if (!ethereum) {
-        setErrorMessage('Kindly install MetaMask wallet extension!');
+        setErrorMessage('Kindly install MetaMask wallet extension');
         return;
       }
 
@@ -21,13 +20,15 @@ function WalletCard({ wave, isConnected, setIsConnected}) {
     }
   };
 
-  window.ethereum.on('accountsChanged', (accounts) => {
-    setDefaultAccount(accounts[0]);
-  });
+  if(ethereum) {
+    ethereum.on('accountsChanged', (accounts) => {
+      setDefaultAccount(accounts[0]);
+    });
 
-  window.ethereum.on('chainChanged', () => {
-    window.location.reload();
-  });
+    ethereum.on('chainChanged', () => {
+      window.location.reload();
+    });
+  }
 
 
   return (
@@ -44,11 +45,17 @@ function WalletCard({ wave, isConnected, setIsConnected}) {
           className="waveButton"
           onClick={wave}
           >
-          <span className="wave-btn-span">Wave at me with your favorite Pokemon!</span> 
+          <span className="wave-btn-span">Tag me with your favorite Pokemon!</span> 
           </button>
       )}
 
-      {errorMessage && <p className="errorMessage">{errorMessage}</p>}
+      {errorMessage && 
+        <p className="errorMessage">
+          {errorMessage}{' '}
+          <span>
+          <a href="https://metamask.io/download/" target="blank">here</a>.
+          </span>
+        </p>}
       {defaultAccount && <p className="defaultAccount">Connected with account: {defaultAccount}</p>}
     </div>
   )
