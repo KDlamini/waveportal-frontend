@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import './App.css';
 
 export default function App() {
+  const [isConnected, setIsConnected] = React.useState(false);
 
   const wave = () => {
     
@@ -12,7 +13,7 @@ export default function App() {
   
   return (
     <section className="main-container">
-      <Navbar />
+      <Navbar isConnected={isConnected}/>
 
       <div className="content-wrapper">
         <div className="dataContainer">
@@ -27,7 +28,11 @@ export default function App() {
             <p>Connect your Ethereum wallet and wave at me with your favorite pokemon!</p>
           </div>
 
-          <WalletCard wave={wave} />
+          <WalletCard
+            wave={wave}
+            isConnected={isConnected}
+            setIsConnected={setIsConnected}
+          />
         </div>
       </div>
     </section>

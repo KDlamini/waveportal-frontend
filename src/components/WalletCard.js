@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
-function WalletCard({ wave }) {
-  const [isConnected, setIsConnected] = useState(false);
+function WalletCard({ wave, isConnected, setIsConnected}) {
   const [errorMessage, setErrorMessage] = useState(null);
   const [defaultAccount, setDefaultAccount] = useState(null);
   

@@ -1,15 +1,15 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { regular } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 
-function Navbar() {
+function Navbar({ isConnected }) {
   return (
     <div className="navbar">
         <p className="logo">SMART PORTAL</p>
         <div className="connection-status">
-            <FontAwesomeIcon icon={regular('circle')} />
+            <span className={isConnected ? "connection-icon active": "connection-icon"}></span>
             {' '}
-            <span>Connected</span>
+            <span>
+            {isConnected ? 'Connected': 'Disconnected'}
+            </span>
         </div>
     </div>
   )
