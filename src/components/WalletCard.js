@@ -38,14 +38,14 @@ function WalletCard({ wave }) {
           className="waveButton"
           onClick={() => connectWallet()}
         >
-          Connect MetaMask Wallet
+          <span className="wave-btn-span">Connect MetaMask Wallet</span>
         </button>
       ) : (
           <button
           className="waveButton"
           onClick={wave}
           >
-            Wave at me with your favorite Pokemon! <span have role="img" aria-label="Emoji">👋</span> 
+          <span className="wave-btn-span">Wave at me with your favorite Pokemon!</span> 
           </button>
       )}
 
