@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Yeseva+One&display=swap');
 
 * {
   box-sizing: border-box;
@@ -278,12 +278,22 @@ body,
   padding: 10px;
   margin: 20px 10px;
   transition: transform 0.2s;
-  color: rgba(231, 231, 231, 0.089);
+  color: rgba(231, 231, 231, 0.2);
+}
+
+.character-card.DC {
+  background: radial-gradient(50% 50% at 50% 50%, #878ba3 1.77%, #2e445e 100%);
+  color: #bbd1e9;
 }
 
 .character-card h1 {
   padding: 0;
   margin: 0;
+}
+
+.studio,
+.character-name {
+  text-transform: uppercase;
 }
 
 .character-image {
@@ -293,9 +303,36 @@ body,
   min-height: 320px;
 }
 
+.character-name {
+  height: 50px;
+  width: 100%;
+  color: transparent;
+  font-family: 'Yeseva One', cursive;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background-image: linear-gradient(
+    to right, #462523 0, #cb9b51 22%, #f6e27a 45%,
+    #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
 .character-logo {
   width: 200px;
   height: 50px;
+}
+
+.studio-logo {
+  width: 125px;
+  height: 50px;
+  margin: 15px 0 10px 0;
+}
+
+.studio-logo.DC {
+  width: 125px;
+  height: 50px;
+  margin: 10px 0 0 0;
 }
 
 .character-description {
@@ -305,5 +342,4 @@ body,
 
 .character-card:hover {
   transform: scale(1.1);
-  color: #b3232b;
 }

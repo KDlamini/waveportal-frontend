@@ -6,15 +6,15 @@ function CharacterCard() {
     <div className="character-wrapper">
         {
             Characters.map((character) => {
-                const { studio, name, image, logo } = character;
+                const { studio, name, image, studioLogo } = character;
 
                 return (
                     <div key={name} className={`character-card ${studio}`}>
-                        <h1 className="studio">{studio}</h1>
+                        <img className={`studio-logo ${studio}`} src={studioLogo} alt="iron-man-logo" />
             
                         <img className="character-image" src={image} alt="iron-man"  />
             
-                        {logo && <img className="character-logo" src={logo} alt="iron-man-logo" />}
+                        <h3 className="character-name">{name}</h3>
                     </div>
                 )
             })
