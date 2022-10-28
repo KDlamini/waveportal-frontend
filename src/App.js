@@ -7,9 +7,10 @@ import './App.css';
 
 export default function App() {
   const [isConnected, setIsConnected] = React.useState(false);
+  const [modalIsOpen, setModalIsOpen] = React.useState(true);
 
   const wave = () => {
-    
+    setModalIsOpen(!modalIsOpen)
   }
   
   return (
@@ -39,7 +40,10 @@ export default function App() {
         </div>
       </section>
 
-      <CharacterModal />
+      <CharacterModal
+        modalIsOpen={modalIsOpen}
+        setModalIsOpen={setModalIsOpen}
+      />
     </main>
   );
 }
