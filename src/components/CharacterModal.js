@@ -16,7 +16,7 @@ function CharacterModal({ modalIsOpen, setModalIsOpen }) {
         fontFamily: 'Poppins, sans-serif',
         fontWeight: '400',
         fontStyle: 'normal',
-        background: '#b3232b',
+        background: 'radial-gradient(50% 50% at 50% 50%, #e3e3e3 1.77%, #9e9e9e 100%)',
         borderRadius: '2px',
         outline: 'none',
         padding: '0',
