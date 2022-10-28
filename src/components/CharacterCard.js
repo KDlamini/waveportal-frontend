@@ -1,17 +1,24 @@
 import React from 'react'
-import IronMan from '../assets/images/Captain-America.png'
-import IronManLogo from '../assets/images/Captain-America-logo.png'
+import Characters from './api';
 
 function CharacterCard() {
   return (
     <div className="character-wrapper">
-        <div className="character-card">
-            <h1>MARVEL</h1>
+        {
+            Characters.map((character) => {
+                const { studio, name, image, logo } = character;
 
-            <img className="character-image" src={IronMan} alt="iron-man"  />
-
-            <img className="character-logo" src={IronManLogo} alt="iron-man-logo" />
-        </div>
+                return (
+                    <div key={name} className={`character-card ${studio}`}>
+                        <h1 className="studio">{studio}</h1>
+            
+                        <img className="character-image" src={image} alt="iron-man"  />
+            
+                        {logo && <img className="character-logo" src={logo} alt="iron-man-logo" />}
+                    </div>
+                )
+            })
+        }
     </div>
   )
 }

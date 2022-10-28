@@ -11,7 +11,7 @@ function CharacterModal({ modalIsOpen, setModalIsOpen }) {
         top: '45px',
         left: '40px',
         right: '40px',
-        bottom: '15px',
+        bottom: '5px',
         border: 'none',
         fontFamily: 'Poppins, sans-serif',
         fontWeight: '400',
