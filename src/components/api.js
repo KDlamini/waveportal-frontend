@@ -234,8 +234,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Spider-Man',
-    
-        type: "villain",
+        type: "superhero",
         image: `${SpiderMan}`,
         logo: `${SpiderManLogo}`,
         studioLogo: `${MarvelLogo}`,
