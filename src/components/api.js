@@ -81,6 +81,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Moon Knight',
+        type: "superhero",
         image: `${MoonKnight}`,
         logo: `${MoonKnightLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -89,6 +90,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Deadpool',
+        type: "superhero",
         image: `${Deadpool}`,
         logo: `${DeadpoolLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -97,6 +99,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Doctor Strange',
+        type: "superhero",
         image: `${DoctorStrange}`,
         logo: `${DoctorStrangeLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -105,6 +108,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Vision',
+        type: "superhero",
         image: `${Vision}`,
         studioLogo: `${MarvelLogo}`,
         logo: '',
@@ -113,6 +117,7 @@ const CharacterData = [
     {
         studio: "DC Comics",
         name: 'Batman',
+        type: "superhero",
         image: `${Batman}`,
         logo: `${BatmanLogo}`,
         studioLogo: `${DcLogo}`,
@@ -121,6 +126,7 @@ const CharacterData = [
     {
         studio: "DC Comics",
         name: 'Superman',
+        type: "superhero",
         image: `${Superman}`,
         logo: `${SupermanLogo}`,
         studioLogo: `${DcLogo}`,
@@ -129,6 +135,7 @@ const CharacterData = [
     {
         studio: "DC Comics",
         name: 'Wonder Woman',
+        type: "superhero",
         image: `${WonderWoman}`,
         logo: `${WonderWomanLogo}`,
         studioLogo: `${DcLogo}`,
@@ -137,6 +144,7 @@ const CharacterData = [
     {
         studio: "DC Comics",
         name: 'Aquaman',
+        type: "superhero",
         image: `${Aquaman}`,
         logo: `${AquamanLogo}`,
         studioLogo: `${DcLogo}`,
@@ -145,6 +153,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Ant-Man',
+        type: "superhero",
         image: `${AntMan}`,
         logo: `${AntManLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -153,6 +162,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Iron Man',
+        type: "superhero",
         image: `${IronMan}`,
         logo: `${IronManLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -161,6 +171,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Captain America',
+        type: "superhero",
         image: `${CaptainAmerica}`,
         logo: `${CaptainAmericaLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -169,6 +180,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Captain Marvel',
+        type: "superhero",
         image: `${CaptainMarvel}`,
         logo: `${CaptainMarvelLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -177,6 +189,7 @@ const CharacterData = [
     {
         studio: "DC Comics",
         name: 'The Flash',
+        type: "superhero",
         image: `${TheFlash}`,
         logo: `${TheFlashLogo}`,
         studioLogo: `${DcLogo}`,
@@ -185,6 +198,7 @@ const CharacterData = [
     {
         studio: "DC Comics",
         name: 'Cyborg',
+        type: "superhero",
         image: `${Cyborg}`,
         logo: '',
         studioLogo: `${DcLogo}`,
@@ -193,6 +207,7 @@ const CharacterData = [
     {
         studio: "DC Comics",
         name: 'Shazam',
+        type: "superhero",
         image: `${Shazam}`,
         logo: '',
         studioLogo: `${DcLogo}`,
@@ -201,6 +216,7 @@ const CharacterData = [
     {
         studio: "DC Comics",
         name: 'Atom Smasher',
+        type: "superhero",
         image: `${AtomSmasher}`,
         logo: '',
         studioLogo: `${DcLogo}`,
@@ -209,6 +225,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Mr Knight',
+        type: "superhero",
         image: `${MrKnight}`,
         logo: `${MrKnightLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -217,6 +234,8 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Spider-Man',
+    
+        type: "villain",
         image: `${SpiderMan}`,
         logo: `${SpiderManLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -226,6 +245,7 @@ const CharacterData = [
         studio: "Marvel",
         name: 'Scarlet Witch',
         image: `${ScarletWitch}`,
+        type: "villain",
         logo: '',
         studioLogo: `${MarvelLogo}`,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -233,6 +253,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Daredevil',
+        type: "superhero",
         image: `${Daredevil}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -241,6 +262,7 @@ const CharacterData = [
     {
         studio: "DC Comics",
         name: 'Dr Fate',
+        type: "superhero",
         image: `${DrFate}`,
         logo: '',
         studioLogo: `${DcLogo}`,
@@ -249,6 +271,7 @@ const CharacterData = [
     {
         studio: "DC Comics",
         name: 'Hawkman',
+        type: "superhero",
         image: `${Hawkman}`,
         logo: '',
         studioLogo: `${DcLogo}`,
@@ -257,6 +280,7 @@ const CharacterData = [
     {
         studio: "DC Comics",
         name: 'Black Adam',
+        type: "villain",
         image: `${BlackAdam}`,
         logo: '',
         studioLogo: `${DcLogo}`,
@@ -265,6 +289,7 @@ const CharacterData = [
     {
         studio: "DC Comics",
         name: 'Cyclone',
+        type: "superhero",
         image: `${Cyclone}`,
         logo: '',
         studioLogo: `${DcLogo}`,
@@ -273,6 +298,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Killmonger',
+        type: "villain",
         image: `${Killmonger}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -281,6 +307,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Loki',
+        type: "villain",
         image: `${Loki}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -289,6 +316,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Hulk',
+        type: "superhero",
         image: `${Hulk}`,
         logo: `${HulkLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -297,6 +325,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Hawkeye',
+        type: "superhero",
         image: `${Hawkeye}`,
         studioLogo: `${MarvelLogo}`,
         logo: '',
@@ -305,6 +334,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Black Widow',
+        type: "superhero",
         image: `${BlackWidow}`,
         logo: `${BlackWidowLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -313,6 +343,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Black Panther',
+        type: "superhero",
         image: `${BlackPanther}`,
         logo: `${BlackPantherLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -321,6 +352,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Thor',
+        type: "superhero",
         image: `${Thor}`,
         logo: `${ThorLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -329,6 +361,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Valkyrie',
+        type: "superhero",
         image: `${Valkyrie}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -337,6 +370,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Shang Chi',
+        type: "superhero",
         image: `${ShangChi}`,
         logo: `${ShangChiLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -345,6 +379,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Wasp',
+        type: "superhero",
         image: `${Wasp}`,
         logo: `${WaspLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -353,6 +388,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Star Lord',
+        type: "superhero",
         image: `${StarLord}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -361,6 +397,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Rocket',
+        type: "superhero",
         image: `${Rocket}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -369,6 +406,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Groot',
+        type: "superhero",
         image: `${Groot}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -377,6 +415,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Gamora',
+        type: "superhero",
         image: `${Gamora}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -385,6 +424,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Drax',
+        type: "superhero",
         image: `${Drax}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -393,6 +433,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Mantis',
+        type: "superhero",
         image: `${Mantis}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -401,6 +442,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Falcon',
+        type: "superhero",
         image: `${Falcon}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -409,6 +451,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Winter Soldier',
+        type: "villain",
         image: `${WinterSoldier}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -417,6 +460,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Ms Marvel',
+        type: "superhero",
         image: `${MsMarvel}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -425,6 +469,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'She-Hulk',
+        type: "superhero",
         image: `${SheHulk}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -433,6 +478,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Nick Fury',
+        type: "superhero",
         image: `${NickFury}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -441,6 +487,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Lady Sif',
+        type: "superhero",
         image: `${LadySif}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -449,6 +496,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Thanos',
+        type: "villain",
         image: `${Thanos}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -457,6 +505,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Ronan',
+        type: "villain",
         image: `${Ronan}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -465,6 +514,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Venom',
+        type: "villain",
         image: `${Venom}`,
         logo: `${VenomLogo}`,
         studioLogo: `${MarvelLogo}`,
@@ -473,6 +523,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Ultron',
+        type: "villain",
         image: `${Ultron}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -481,6 +532,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Namor',
+        type: "villain",
         image: `${Namor}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -489,6 +541,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Mysterio',
+        type: "villain",
         image: `${Mysterio}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -497,6 +550,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Hella',
+        type: "villain",
         image: `${Hella}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
@@ -505,6 +559,7 @@ const CharacterData = [
     {
         studio: "Marvel",
         name: 'Ghost',
+        type: "villain",
         image: `${Ghost}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
