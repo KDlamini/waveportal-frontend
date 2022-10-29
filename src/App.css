@@ -272,6 +272,7 @@ body,
   margin-right: 2%;
   padding: 0 5px;
   outline: none;
+  cursor: pointer;
 }
 
 .search {
@@ -315,6 +316,7 @@ body,
   margin: 20px 10px;
   transition: transform 0.2s;
   color: rgba(231, 231, 231, 0.2);
+  cursor: pointer;
 }
 
 .character-card.DC {

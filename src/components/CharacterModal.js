@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import CharacterCard from './CharacterCard'
 import SearchBar from './SearchBar'
 
-function CharacterModal({ modalIsOpen, setModalIsOpen }) {
+function CharacterModal({ modalIsOpen, setModalIsOpen, characters, setCharacters }) {
     const styles = {
       overlay: {
         backgroundColor: '1c1c1c1a',
@@ -40,8 +40,8 @@ function CharacterModal({ modalIsOpen, setModalIsOpen }) {
                 <i className="times icon" /> <span>Close</span>
             </button>
         </div>
-        <SearchBar />
-        <CharacterCard />
+        <SearchBar setCharacters={setCharacters} />
+        <CharacterCard characters={characters} />
       </Modal>
     );
 }

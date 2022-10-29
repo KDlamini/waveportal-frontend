@@ -1,11 +1,10 @@
 import React from 'react'
-import Characters from './api';
 
-function CharacterCard() {
+function CharacterCard({ characters }) {
   return (
     <div className="character-wrapper">
         {
-            Characters.map((character) => {
+            characters.map((character) => {
                 const { studio, name, image, studioLogo } = character;
 
                 return (

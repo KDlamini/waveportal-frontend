@@ -77,7 +77,7 @@ import Cyclone from '../assets/images/Cyclone.png';
 import BlackAdam from '../assets/images/Black-Adam.png';
 
 
-const Characters = [
+const CharacterData = [
     {
         studio: "Marvel",
         name: 'Moon Knight',
@@ -512,4 +512,4 @@ const Characters = [
     },
 ]
 
-export default Characters
+export default CharacterData

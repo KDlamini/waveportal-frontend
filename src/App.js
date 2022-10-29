@@ -3,11 +3,13 @@ import { ethers } from "ethers";
 import WalletCard from './components/WalletCard';
 import Navbar from './components/Navbar'
 import CharacterModal from "./components/CharacterModal";
+import CharacterData from './components/api';
 import './App.css';
 
 export default function App() {
   const [isConnected, setIsConnected] = React.useState(false);
   const [modalIsOpen, setModalIsOpen] = React.useState(true);
+  const [characters, setCharacters] = React.useState(CharacterData);
 
   const wave = () => {
     setModalIsOpen(!modalIsOpen)
@@ -43,6 +45,8 @@ export default function App() {
       <CharacterModal
         modalIsOpen={modalIsOpen}
         setModalIsOpen={setModalIsOpen}
+        characters={characters}
+        setCharacters={setCharacters}
       />
     </main>
   );
