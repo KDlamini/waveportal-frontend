@@ -301,6 +301,7 @@ body,
   min-width: 180px;
   height: 320px;
   min-height: 320px;
+  transition: transform 0.8s;
 }
 
 .character-name {
@@ -316,6 +317,7 @@ body,
   );
   background-clip: text;
   -webkit-background-clip: text;
+  z-index: 1;
 }
 
 .character-logo {
@@ -340,6 +342,6 @@ body,
   padding: 10px 0 0 0;
 }
 
-.character-card:hover {
-  transform: scale(1.1);
+.character-card:hover .character-image {
+  transform: scale(1.2);
 }
