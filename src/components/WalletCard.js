@@ -30,11 +30,6 @@ function WalletCard({ wave, isConnected, setIsConnected}) {
     });
   }
 
-  if (defaultAccount) {
-    setErrorMessage(null)
-  }
-
-
   return (
     <div className="dataContainer">
       {!isConnected ? (
