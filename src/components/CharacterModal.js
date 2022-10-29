@@ -1,6 +1,7 @@
 import React from 'react'
 import Modal from 'react-modal';
 import CharacterCard from './CharacterCard'
+import SearchBar from './SearchBar'
 
 function CharacterModal({ modalIsOpen, setModalIsOpen }) {
     const styles = {
@@ -39,6 +40,7 @@ function CharacterModal({ modalIsOpen, setModalIsOpen }) {
                 <i className="times icon" /> <span>Close</span>
             </button>
         </div>
+        <SearchBar />
         <CharacterCard />
       </Modal>
     );
