@@ -30,6 +30,10 @@ function WalletCard({ wave, isConnected, setIsConnected}) {
     });
   }
 
+  if (defaultAccount) {
+    setErrorMessage(null)
+  }
+
 
   return (
     <div className="dataContainer">
@@ -52,9 +56,13 @@ function WalletCard({ wave, isConnected, setIsConnected}) {
       {errorMessage && 
         <p className="errorMessage">
           {errorMessage}{' '}
-          <span>
-          <a href="https://metamask.io/download/" target="blank">here</a>.
-          </span>
+          {
+            errorMessage.includes('Kindly install MetaMask') ?
+              <span>
+              <a href="https://metamask.io/download/" target="blank">here</a>.
+              </span>
+            : null
+          }
         </p>}
       {defaultAccount && <p className="defaultAccount">Connected with account: {defaultAccount}</p>}
     </div>
