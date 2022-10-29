@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import CharacterData from "./api"
 
 function SearchBar({ setCharacters }) {
+    const [ search, setSearch ] = useState('');
+    const characters = CharacterData;
+
     const handleFilter = (option) => {
-        const characters = CharacterData;
         let filtered = [];
 
         switch (option) {
@@ -36,21 +38,43 @@ function SearchBar({ setCharacters }) {
         return filtered;
     }
 
+    const handleSearch = (value) => {
+        setSearch(value);
+
+        const result = characters.filter((character) => {
+            return (
+                character.name.toLowerCase().includes(value) ||
+                character.studio.toLowerCase().includes(value) ||
+                character.type.toLowerCase().includes(value)
+            )
+        });
+
+        setCharacters(result);
+    }
+
     return (
         <div className="search-bar">
-        <select
-            className="filter-characters"
-            onChange={(e) => setCharacters(handleFilter(e.target.value))}
-        >
-            <option value="All">All</option>
-            <option value="Marvel">Marvel Studios</option>
-            <option value="MCU Heroes">MCU: superheroes</option>
-            <option value="MCU Villains">MCU: villains</option>
-            <option value="DC">DC Universe</option>
-            <option value="DCEU Heroes">DCEU: superheroes</option>
-            <option value="DCEU Villains">DCEU: villains</option>
-        </select>
-        <input type="text" placeholder="Search" value="" className="search"></input>
+            <select
+                className="filter-characters"
+                onChange={(e) => setCharacters(handleFilter(e.target.value))}
+            >
+                <option value="All">All</option>
+                <option value="Marvel">Marvel Studios</option>
+                <option value="MCU Heroes">MCU: superheroes</option>
+                <option value="MCU Villains">MCU: villains</option>
+                <option value="DC">DC Universe</option>
+                <option value="DCEU Heroes">DCEU: superheroes</option>
+                <option value="DCEU Villains">DCEU: villains</option>
+            </select>
+
+            <input
+                type="text"
+                placeholder="Search"
+                value={search}
+                className="search"
+                onChange={(e) => handleSearch(e.target.value)}
+            >
+            </input>
         </div>
     );
 }
