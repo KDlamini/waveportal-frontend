@@ -81,10 +81,11 @@ body,
 }
 
 .connection-icon.active {
-  color: #ffcc23;
-  border: none;
-  box-shadow: 0 0 2px #ffcc23;
-  text-shadow: 0 0 2px #ffcc23;
+  color: #f0ff23;
+  border: 1px solid #f5841f;
+  background: #1d1d1d;
+  box-shadow: 0 0 5px #ffcc23;
+  text-shadow: 0 0 5px #ffcc23;
 }
 
 .content-wrapper {
@@ -335,8 +336,8 @@ body,
 }
 
 .character-image {
-  width: 180px;
-  min-width: 180px;
+  width: 160px;
+  min-width: 160px;
   height: 320px;
   min-height: 320px;
   transition: transform 0.8s;

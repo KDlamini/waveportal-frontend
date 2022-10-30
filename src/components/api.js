@@ -18,13 +18,13 @@ import IronMan from '../assets/images/IronMan.png';
 import IronManLogo from '../assets/images/IronMan-logo.png';
 import Hulk from '../assets/images/Hulk.png';
 import HulkLogo from '../assets/images/Hulk-logo.png';
-import Superman from '../assets/images/Superman.png';
+import Superman from '../assets/images/Superman1.png';
 import SupermanLogo from '../assets/images/Superman-logo.png';
-import WonderWoman from '../assets/images/Wonder-Woman.png';
+import WonderWoman from '../assets/images/Wonder-Woman3.png';
 import WonderWomanLogo from '../assets/images/Wonder-Woman-logo.png';
-import TheFlash from '../assets/images/The-Flash.png';
+import TheFlash from '../assets/images/The-Flash1.png';
 import TheFlashLogo from '../assets/images/The-Flash-logo.png';
-import SpiderMan from '../assets/images/SpiderMan.png';
+import SpiderMan from '../assets/images/SpiderMan2.png';
 import SpiderManLogo from '../assets/images/SpiderMan-logo.png';
 import Cyborg from '../assets/images/Cyborg.png';
 import Vision from '../assets/images/Vision.png';
@@ -72,9 +72,36 @@ import Ghost from '../assets/images/Ghost.png';
 import Shazam from '../assets/images/Shazam.png';
 import AtomSmasher from '../assets/images/Atom-Smasher.png';
 import DrFate from '../assets/images/Dr-Fate.png';
-import Hawkman from '../assets/images/Hawkman.png';
+import Hawkman from '../assets/images/Hawkman0.png';
 import Cyclone from '../assets/images/Cyclone.png';
 import BlackAdam from '../assets/images/Black-Adam.png';
+import EternalsIkaris from '../assets/images/Eternals-Ikaris1.png';
+import EternalsThena from '../assets/images/Eternals-Thena.png';
+import EternalsKingo from '../assets/images/Eternals-Kingo.png';
+import EternalsMakkari from '../assets/images/Eternals-Makkari.png';
+import EternalsGilgamesh from '../assets/images/Eternals-Gilgamesh.png';
+import EternalsSersi from '../assets/images/Eternals-Sersi.png';
+import EternalsPhastos from '../assets/images/Eternals-Phastos.png';
+import EternalsDruig from '../assets/images/Eternals-Druig.png';
+import EternalsStarfox from '../assets/images/Eternals-Starfox.png';
+import EternalsSprite from '../assets/images/Eternals-Sprite.png';
+import EternalsAjak from '../assets/images/Eternals-Ajak.png';
+import UsAgent from '../assets/images/US-Agent.png';
+import Yelena from '../assets/images/Yelena-Bolova.png';
+import KateBishop from '../assets/images/Kate-Bishop.png';
+import Joker from '../assets/images/Joker.png';
+import Quinn from '../assets/images/Harley-Quinn.png';
+import Peacemaker from '../assets/images/Peacemaker.png';
+import Deadshot from '../assets/images/Deadshot.png';
+import BlackManta from '../assets/images/Black-Manta.png';
+import Bloodsport from '../assets/images/Bloodsport.png';
+import Darkseid from '../assets/images/Darkseid.png';
+import RickFlag from '../assets/images/Rick-Flag.png';
+import Scarecrow from '../assets/images/Scarecrow.png';
+import Bane from '../assets/images/Bane.png';
+import Catwoman from '../assets/images/Catwoman.png';
+import Atlanna from '../assets/images/Atlanna.png';
+import Steppenwolf from '../assets/images/Steppenwolf.png';
 
 
 const CharacterData = [
@@ -125,19 +152,19 @@ const CharacterData = [
     },
     {
         studio: "DC Comics",
-        name: 'Superman',
+        name: 'Wonder Woman',
         type: "superhero",
-        image: `${Superman}`,
-        logo: `${SupermanLogo}`,
+        image: `${WonderWoman}`,
+        logo: `${WonderWomanLogo}`,
         studioLogo: `${DcLogo}`,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     },
     {
         studio: "DC Comics",
-        name: 'Wonder Woman',
+        name: 'Superman',
         type: "superhero",
-        image: `${WonderWoman}`,
-        logo: `${WonderWomanLogo}`,
+        image: `${Superman}`,
+        logo: `${SupermanLogo}`,
         studioLogo: `${DcLogo}`,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     },
@@ -331,6 +358,42 @@ const CharacterData = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     },
     {
+        studio: "DC Comics",
+        name: 'Deadshot',
+        type: "villain",
+        image: `${Deadshot}`,
+        logo: '',
+        studioLogo: `${DcLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "DC Comics",
+        name: 'Peacemaker',
+        type: "villain",
+        image: `${Peacemaker}`,
+        logo: '',
+        studioLogo: `${DcLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "DC Comics",
+        name: 'Harley Quinn',
+        type: "villain",
+        image: `${Quinn}`,
+        logo: '',
+        studioLogo: `${DcLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "DC Comics",
+        name: 'Joker',
+        type: "villain",
+        image: `${Joker}`,
+        logo: '',
+        studioLogo: `${DcLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
         studio: "Marvel",
         name: 'Black Widow',
         type: "superhero",
@@ -367,6 +430,42 @@ const CharacterData = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     },
     {
+        studio: "DC Comics",
+        name: 'Bloodsport',
+        type: "villain",
+        image: `${Bloodsport}`,
+        logo: '',
+        studioLogo: `${DcLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "DC Comics",
+        name: 'Black Manta',
+        type: "villain",
+        image: `${BlackManta}`,
+        logo: '',
+        studioLogo: `${DcLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "DC Comics",
+        name: 'Rick Flag',
+        type: "villain",
+        image: `${RickFlag}`,
+        logo: '',
+        studioLogo: `${DcLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "DC Comics",
+        name: 'Darkseid',
+        type: "villain",
+        image: `${Darkseid}`,
+        logo: '',
+        studioLogo: `${DcLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
         studio: "Marvel",
         name: 'Shang Chi',
         type: "superhero",
@@ -400,6 +499,42 @@ const CharacterData = [
         image: `${Rocket}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "DC Comics",
+        name: 'Bane',
+        type: "villain",
+        image: `${Bane}`,
+        logo: '',
+        studioLogo: `${DcLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "DC Comics",
+        name: 'Scarecrow',
+        type: "villain",
+        image: `${Scarecrow}`,
+        logo: '',
+        studioLogo: `${DcLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "DC Comics",
+        name: 'Catwoman',
+        type: "villain",
+        image: `${Catwoman}`,
+        logo: '',
+        studioLogo: `${DcLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "DC Comics",
+        name: 'Atlanna',
+        type: "superhero",
+        image: `${Atlanna}`,
+        logo: '',
+        studioLogo: `${DcLogo}`,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     },
     {
@@ -485,6 +620,33 @@ const CharacterData = [
     },
     {
         studio: "Marvel",
+        name: 'US Agent',
+        type: "villain",
+        image: `${UsAgent}`,
+        logo: '',
+        studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "Marvel",
+        name: 'Yelena Bolova',
+        type: "villain",
+        image: `${Yelena}`,
+        logo: '',
+        studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "Marvel",
+        name: 'Kate Bishop',
+        type: "superhero",
+        image: `${KateBishop}`,
+        logo: '',
+        studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "Marvel",
         name: 'Lady Sif',
         type: "superhero",
         image: `${LadySif}`,
@@ -562,6 +724,114 @@ const CharacterData = [
         image: `${Ghost}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "Marvel",
+        name: 'Ikaris',
+        type: "villain",
+        image: `${EternalsIkaris}`,
+        logo: '',
+        studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "Marvel",
+        name: 'Thena',
+        type: "superhero",
+        image: `${EternalsThena}`,
+        logo: '',
+        studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "Marvel",
+        name: 'Kingo',
+        type: "superhero",
+        image: `${EternalsKingo}`,
+        logo: '',
+        studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "Marvel",
+        name: 'Makkari',
+        type: "superhero",
+        image: `${EternalsMakkari}`,
+        logo: '',
+        studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "Marvel",
+        name: 'Gilgamesh',
+        type: "superhero",
+        image: `${EternalsGilgamesh}`,
+        logo: '',
+        studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "Marvel",
+        name: 'Sersi',
+        type: "superhero",
+        image: `${EternalsSersi}`,
+        logo: '',
+        studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "Marvel",
+        name: 'Phastos',
+        type: "superhero",
+        image: `${EternalsPhastos}`,
+        logo: '',
+        studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "Marvel",
+        name: 'Druig',
+        type: "superhero",
+        image: `${EternalsDruig}`,
+        logo: '',
+        studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "Marvel",
+        name: 'Starfox',
+        type: "superhero",
+        image: `${EternalsStarfox}`,
+        logo: '',
+        studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "Marvel",
+        name: 'Sprite',
+        type: "superhero",
+        image: `${EternalsSprite}`,
+        logo: '',
+        studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "Marvel",
+        name: 'Ajak',
+        type: "superhero",
+        image: `${EternalsAjak}`,
+        logo: '',
+        studioLogo: `${MarvelLogo}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+        studio: "DC Comics",
+        name: 'Steppenwolf',
+        type: "villain",
+        image: `${Steppenwolf}`,
+        logo: '',
+        studioLogo: `${DcLogo}`,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     },
 ]

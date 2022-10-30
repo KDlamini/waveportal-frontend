@@ -41,11 +41,13 @@ function SearchBar({ setCharacters }) {
     const handleSearch = (value) => {
         setSearch(value);
 
+        const lowercaseValue = value.toLowerCase();
+
         const result = characters.filter((character) => {
             return (
-                character.name.toLowerCase().includes(value) ||
-                character.studio.toLowerCase().includes(value) ||
-                character.type.toLowerCase().includes(value)
+                character.name.toLowerCase().includes(lowercaseValue) ||
+                character.studio.toLowerCase().includes(lowercaseValue) ||
+                character.type.toLowerCase().includes(lowercaseValue)
             )
         });
 
