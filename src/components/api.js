@@ -16,7 +16,7 @@ import CaptainMarvel from '../assets/images/Captain-Marvel.png';
 import CaptainMarvelLogo from '../assets/images/Captain-Marvel-logo.png';
 import IronMan from '../assets/images/IronMan.png';
 import IronManLogo from '../assets/images/IronMan-logo.png';
-import Hulk from '../assets/images/Hulk.png';
+import Hulk from '../assets/images/Hulk1.png';
 import HulkLogo from '../assets/images/Hulk-logo.png';
 import Superman from '../assets/images/Superman1.png';
 import SupermanLogo from '../assets/images/Superman-logo.png';
@@ -61,12 +61,12 @@ import VenomLogo from '../assets/images/Venom-logo.png';
 import Ultron from '../assets/images/Ultron.png';
 import Namor from '../assets/images/Namor.png';
 import Mysterio from '../assets/images/Mysterio.png';
-import MsMarvel from '../assets/images/Ms-Marvel.png';
+import MsMarvel from '../assets/images/Ms-Marvel1.png';
 import SheHulk from '../assets/images/She-Hulk.png';
 import NickFury from '../assets/images/Nick-Fury.png';
 import WinterSoldier from '../assets/images/Winter-Soldier.png';
 import Falcon from '../assets/images/Falcon.png';
-import LadySif from '../assets/images/Lady-Sif.png';
+import Nebula from '../assets/images/Nebula1.png';
 import Hella from '../assets/images/Hella.png';
 import Ghost from '../assets/images/Ghost.png';
 import Shazam from '../assets/images/Shazam.png';
@@ -647,9 +647,9 @@ const CharacterData = [
     },
     {
         studio: "Marvel",
-        name: 'Lady Sif',
+        name: 'Nebula',
         type: "superhero",
-        image: `${LadySif}`,
+        image: `${Nebula}`,
         logo: '',
         studioLogo: `${MarvelLogo}`,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
