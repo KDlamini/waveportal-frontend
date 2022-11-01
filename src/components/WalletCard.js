@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-function WalletCard({ wave, isConnected, setIsConnected}) {
+function WalletCard({ viewCharacters, isConnected, setIsConnected}) {
   const [errorMessage, setErrorMessage] = useState(null);
   const [defaultAccount, setDefaultAccount] = useState(null);
   const { ethereum } = window;
@@ -74,7 +74,7 @@ function WalletCard({ wave, isConnected, setIsConnected}) {
       ) : (
           <button
           className="waveButton"
-          onClick={wave}
+          onClick={viewCharacters}
           >
           <span className="wave-btn-span">Tag me with your favorite superhero or villain!</span> 
           </button>

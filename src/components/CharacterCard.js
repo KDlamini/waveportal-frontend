@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CharacterCard({ characters }) {
+function CharacterCard({ characters, wave }) {
   return (
     <div className="character-wrapper">
         {
@@ -8,13 +8,18 @@ function CharacterCard({ characters }) {
                 const { studio, name, image, studioLogo } = character;
 
                 return (
-                    <div key={name} className={`character-card ${studio}`}>
+                    <button
+                        type="button"
+                        key={name}
+                        className={`character-card ${studio}`}
+                        onClick={wave}
+                    >
                         <img className={`studio-logo ${studio}`} src={studioLogo} alt="iron-man-logo" />
             
                         <img className="character-image" src={image} alt="iron-man"  />
             
                         <h3 className="character-name">{name}</h3>
-                    </div>
+                    </button>
                 )
             })
         }
