@@ -76,7 +76,7 @@ function WalletCard({ wave, isConnected, setIsConnected}) {
           className="waveButton"
           onClick={wave}
           >
-          <span className="wave-btn-span">Tag me with your favorite Pokemon!</span> 
+          <span className="wave-btn-span">Tag me with your favorite superhero or villain!</span> 
           </button>
       )}
 
