@@ -2,8 +2,11 @@ import React from 'react'
 import Modal from 'react-modal';
 import CharacterCard from './CharacterCard'
 import SearchBar from './SearchBar'
+import MessageForm from './MessageForm'
 
 function CharacterModal({ wave, modalIsOpen, setModalIsOpen, characters, setCharacters }) {
+  const [writeMessage, setWriteMessage] = React.useState({status: false});
+
     const styles = {
       overlay: {
         backgroundColor: '1c1c1c1a',
@@ -40,8 +43,16 @@ function CharacterModal({ wave, modalIsOpen, setModalIsOpen, characters, setChar
                 <i className="times icon" /> <span>Close</span>
             </button>
         </div>
-        <SearchBar setCharacters={setCharacters} />
-        <CharacterCard characters={characters} wave={wave}/>
+        {
+          writeMessage.status ? (
+            <MessageForm wave={wave} writeMessage={writeMessage} setWriteMessage={setWriteMessage}/>
+          ) : (
+            <div>
+              <SearchBar setCharacters={setCharacters} />
+              <CharacterCard characters={characters} setWriteMessage={setWriteMessage}/>
+            </div>
+          )
+        }
       </Modal>
     );
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 
-function CharacterCard({ characters, wave }) {
+function CharacterCard({ characters, setWriteMessage }) {
   return (
     <div className="character-wrapper">
         {
-            characters.map((character) => {
+            characters.map((character, index) => {
                 const { studio, name, image, studioLogo } = character;
 
                 return (
@@ -12,11 +12,11 @@ function CharacterCard({ characters, wave }) {
                         type="button"
                         key={name}
                         className={`character-card ${studio}`}
-                        onClick={wave}
+                        onClick={() => setWriteMessage({status: true, name, index, image})}
                     >
-                        <img className={`studio-logo ${studio}`} src={studioLogo} alt="iron-man-logo" />
+                        <img className={`studio-logo ${studio}`} src={studioLogo} alt="studio-logo" />
             
-                        <img className="character-image" src={image} alt="iron-man"  />
+                        <img className="character-image" src={image} alt="character"  />
             
                         <h3 className="character-name">{name}</h3>
                     </button>
