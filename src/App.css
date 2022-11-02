@@ -10,6 +10,11 @@ a {
   color: #00a3cc;
 }
 
+hr {
+  border-color: grey;
+  margin: 1px 0;
+}
+
 body,
 .main-container {
   margin: 0;
@@ -147,6 +152,62 @@ body,
 .message-content {
   flex: 8;
   padding: 0 10px;
+}
+
+.msg-details {
+  margin: 0;
+  color: gray;
+}
+
+.no-messages {
+  margin-top: 40px;
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.message-form-wrapper {
+  display: flex;
+  padding: 50px;
+}
+
+.form-image {
+  flex: 1;
+  min-width: 245px;
+}
+
+.message-form {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+.message-textarea {
+  border: none;
+  outline: none;
+  background: transparent;
+  margin-top: 20px;
+  border-bottom: 1px solid #808080;
+}
+
+.message-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.message-btn {
+  width: 120px;
+  text-align: center;
+  background: #0c0c0c;
+  color: #ffffff;
+  padding: 5px 30px;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 .greeting-wrapper {
