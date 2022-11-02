@@ -42,23 +42,28 @@ export default function App() {
         <Navbar isConnected={isConnected}/>
 
         <div className="content-wrapper">
-          <div className="dataContainer">
-            <div className="header">
-              Hello Blockchain Enthusiast! <span have role="img" aria-label="Emoji">👋</span>
+          <div className="messages-container">
+          messages
+          </div>
+          <div className="wallet-container">
+            <div className="greeting-wrapper">
+              <div className="header">
+                Hello Blockchain Enthusiast! <span have role="img" aria-label="Emoji">👋</span>
+              </div>
+
+              <p className="greeting">Welcome to my Smart Portal</p>
+
+              <div className="bio">
+                <p>I am Simo, a full stack developer aspiring to be a Smartchain developer.</p>
+                <p>Connect your Ethereum wallet and tag me with your favorite superhero or villain!</p>
+              </div>
+
+              <WalletCard
+                viewCharacters={viewCharacters}
+                isConnected={isConnected}
+                setIsConnected={setIsConnected}
+              />
             </div>
-
-            <p className="greeting">Welcome to my Smart Portal</p>
-
-            <div className="bio">
-              <p>I am Simo, a full stack developer aspiring to be a Smartchain developer.</p>
-              <p>Connect your Ethereum wallet and tag me with your favorite superhero or villain!</p>
-            </div>
-
-            <WalletCard
-              viewCharacters={viewCharacters}
-              isConnected={isConnected}
-              setIsConnected={setIsConnected}
-            />
           </div>
         </div>
       </section>

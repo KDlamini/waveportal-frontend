@@ -63,7 +63,7 @@ function WalletCard({ viewCharacters, isConnected, setIsConnected}) {
   }
 
   return (
-    <div className="dataContainer">
+    <div className="walletContainer">
       {!isConnected ? (
         <button
           className="waveButton"

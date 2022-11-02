@@ -89,19 +89,35 @@ body,
 }
 
 .content-wrapper {
+  display: flex;
   margin: 0;
+  height: 93.5vh;
+  border: 1px solid green;
+}
+
+.messages-container,
+.wallet-container {
+  flex: 1;
+  position: relative;
+  padding: 20px;
+}
+
+.greeting-wrapper {
   position: absolute;
   top: 45%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-}
-
-.dataContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 600px;
+  width: 80%;
+}
+
+.walletContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .header {
