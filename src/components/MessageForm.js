@@ -7,7 +7,7 @@ function MessageForm({ wave, writeMessage, setWriteMessage, setModalIsOpen }) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        wave(name, index, message);
+        wave(name, index, message)
         setMessage('')
         setWriteMessage({status: false})
         setModalIsOpen(false)
