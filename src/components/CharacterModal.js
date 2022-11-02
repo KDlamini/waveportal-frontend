@@ -3,9 +3,15 @@ import Modal from 'react-modal';
 import CharacterCard from './CharacterCard'
 import SearchBar from './SearchBar'
 import MessageForm from './MessageForm'
+import AvengersAudio from '../assets/audio/Avengers Theme.mp3'
 
 function CharacterModal({ wave, modalIsOpen, setModalIsOpen, characters, setCharacters }) {
   const [writeMessage, setWriteMessage] = React.useState({status: false});
+  const [audio] = React.useState(new Audio(AvengersAudio));
+
+  React.useEffect(() => {
+    writeMessage.status ? audio.play() : audio.pause();
+  });
 
     const styles = {
       overlay: {
