@@ -15,7 +15,7 @@ export default function App() {
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
   const [characters, setCharacters] = React.useState(CharacterData);
   const [totalWaves, setTotalWaves] = React.useState(0);
-  const contractAddress = "0x9E66864a9A43c21a970F15fc63A32d25B735BF94"; //contract deployment address
+  const contractAddress = "0x3e19c1747C4769F4C1C40d00C21D8108AE024dDf"; //contract deployment address
   const contractABI = abi.abi; //reference the abi content
   const { ethereum } = window;
 
@@ -54,9 +54,9 @@ export default function App() {
         if (ethereum) {
           const provider = new ethers.providers.Web3Provider(ethereum);
           const signer = provider.getSigner();
-          const wavePortalContract = new ethers.Contract(contractAddress, contractABI, signer);
+          const smartPortalContract = new ethers.Contract(contractAddress, contractABI, signer);
 
-          let count = await wavePortalContract.getWaveStatus();
+          let count = await smartPortalContract.getWaveStatus();
           setTotalWaves(count.toNumber())
         } else {
           console.log("Ethereum object doesn't exist!");
@@ -73,6 +73,31 @@ export default function App() {
 
   const wave = async () => {
     // setModalIsOpen(!modalIsOpen)
+
+    try {
+      if (ethereum) {
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        const smartPortalContract = new ethers.Contract(contractAddress, contractABI, signer);
+        
+        let count = await smartPortalContract.getTotalWaves();
+        /*
+        * Execute the actual wave from your smart contract
+        */
+        const waveTxn = await smartPortalContract.wave();
+        console.log("Mining...", waveTxn.hash);
+
+        await waveTxn.wait();
+        console.log("Mined -- ", waveTxn.hash);
+
+        count = await smartPortalContract.getTotalWaves();
+        setTotalWaves(count.toNumber())
+      } else {
+        console.log("Ethereum object doesn't exist!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
   
   return (
