@@ -8,7 +8,22 @@ function MessageCard({ defaultAccount }) {
         <img className="msg-image" src={Vision} alt="iron-man"  />
       </div>
       <div className="message-content">
-        <p>{defaultAccount}</p>
+        <p>
+          <span have role="img" aria-label="Emoji">💬</span>
+          {' '}
+          This is where the message from the Blockchain will be.
+        </p>
+        <hr></hr>
+        <p className="msg-details">
+          <span have role="img" aria-label="Emoji">✍🏾</span>
+          {' '}
+          <b>Author: </b>{defaultAccount}
+        </p>
+        <p className="msg-details">
+          <span have role="img" aria-label="Emoji">🕝</span>
+          {' '}
+          <b>11:26:12 PM - Nov, 2, 2022</b>
+        </p>
       </div>
     </div>
   )
