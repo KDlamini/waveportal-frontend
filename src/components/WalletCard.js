@@ -44,7 +44,7 @@ function WalletCard({
           className="waveButton"
           onClick={viewCharacters}
           >
-          <span className="wave-btn-span">Tag me with your favorite superhero or villain!</span> 
+          <span className="wave-btn-span">Message your favorite superhero or villain!</span> 
           </button>
       )}
 

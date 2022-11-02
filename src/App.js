@@ -14,6 +14,7 @@ export default function App() {
   const [isConnected, setIsConnected] = React.useState(false);
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
   const [characters, setCharacters] = React.useState(CharacterData);
+  const [allWaves, setAllWaves] = React.useState([]);
   const [totalWaves, setTotalWaves] = React.useState(0);
   const contractAddress = "0x3e19c1747C4769F4C1C40d00C21D8108AE024dDf"; //contract deployment address
   const contractABI = abi.abi; //reference the abi content
@@ -57,7 +58,21 @@ export default function App() {
           const smartPortalContract = new ethers.Contract(contractAddress, contractABI, signer);
 
           let count = await smartPortalContract.getWaveStatus();
+          const waves = await smartPortalContract.getAllWaves();
+          let wavesCleaned = [];
+
+          waves.forEach(wave => {
+            wavesCleaned.push({
+              address: wave.waver,
+              message: wave.message,
+              character: wave.character,
+              characterIndex: wave.characterIndex,
+              timestamp: new Date(wave.timestamp * 1000),
+            });
+          });
+  
           setTotalWaves(count.toNumber())
+          setAllWaves(wavesCleaned);
         } else {
           console.log("Ethereum object doesn't exist!");
         }
@@ -68,30 +83,31 @@ export default function App() {
 
     fetchData();
   });
-  
+
   const viewCharacters = () => setModalIsOpen(!modalIsOpen);
 
-  const wave = async () => {
+  const wave = async (name, index, message) => {
     // setModalIsOpen(!modalIsOpen)
 
     try {
       if (ethereum) {
-        const provider = new ethers.providers.Web3Provider(ethereum);
-        const signer = provider.getSigner();
-        const smartPortalContract = new ethers.Contract(contractAddress, contractABI, signer);
+        console.log(name, index, message);
+        // const provider = new ethers.providers.Web3Provider(ethereum);
+        // const signer = provider.getSigner();
+        // const smartPortalContract = new ethers.Contract(contractAddress, contractABI, signer);
         
-        let count = await smartPortalContract.getTotalWaves();
-        /*
-        * Execute the actual wave from your smart contract
-        */
-        const waveTxn = await smartPortalContract.wave();
-        console.log("Mining...", waveTxn.hash);
+        // let count = await smartPortalContract.getWaveStatus();
+        // /*
+        // * Execute the actual wave from your smart contract
+        // */
+        // const waveTxn = await smartPortalContract.wave(name, index);
+        // console.log("Mining...", waveTxn.hash);
 
-        await waveTxn.wait();
-        console.log("Mined -- ", waveTxn.hash);
+        // await waveTxn.wait();
+        // console.log("Mined -- ", waveTxn.hash);
 
-        count = await smartPortalContract.getTotalWaves();
-        setTotalWaves(count.toNumber())
+        // count = await smartPortalContract.getWaveStatus();
+        // setTotalWaves(count.toNumber())
       } else {
         console.log("Ethereum object doesn't exist!");
       }
@@ -108,6 +124,19 @@ export default function App() {
         <div className="content-wrapper">
           <div className="messages-container">
             <p className="waves">{totalWaves} total waves</p>
+            {/*
+              allWaves ?
+                <p className="no-messages">No messages.</p>
+              : allWaves.map((wave) => {
+                return (
+                  <MessageCard
+                    key={wave.timestamp}
+                    wave={wave}
+                    defaultAccount={defaultAccount}
+                  />
+                )
+              })
+            */}
             <MessageCard
               defaultAccount={defaultAccount}
             />
@@ -115,7 +144,7 @@ export default function App() {
           <div className="wallet-container">
             <div className="greeting-wrapper">
               <div className="header">
-                Hello Blockchain Enthusiast! <span have role="img" aria-label="Emoji">👋</span>
+                Hello Blockchain Enthusiast! <span role="img" aria-label="Emoji">👋</span>
               </div>
 
               <p className="greeting">Welcome to my Smart Portal</p>

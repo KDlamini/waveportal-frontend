@@ -31,6 +31,7 @@ function CharacterModal({ wave, modalIsOpen, setModalIsOpen, characters, setChar
       <Modal
         isOpen={modalIsOpen}
         shouldCloseOnOverlayClick={false}
+        ariaHideApp={false}
         onRequestClose={() => setModalIsOpen(false)}
         style={styles}
       >
@@ -45,7 +46,12 @@ function CharacterModal({ wave, modalIsOpen, setModalIsOpen, characters, setChar
         </div>
         {
           writeMessage.status ? (
-            <MessageForm wave={wave} writeMessage={writeMessage} setWriteMessage={setWriteMessage}/>
+            <MessageForm
+              wave={wave}
+              writeMessage={writeMessage}
+              setWriteMessage={setWriteMessage}
+              setModalIsOpen={setModalIsOpen}
+            />
           ) : (
             <div>
               <SearchBar setCharacters={setCharacters} />
