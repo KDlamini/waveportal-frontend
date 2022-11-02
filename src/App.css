@@ -92,14 +92,28 @@ body,
   display: flex;
   margin: 0;
   height: 93.5vh;
-  border: 1px solid green;
+  padding: 30px 10px 10px 10px;
 }
 
 .messages-container,
 .wallet-container {
   flex: 1;
   position: relative;
-  padding: 20px;
+  padding: 10px;
+}
+
+.wallet-container {
+  border-left: 1px solid #383838;
+}
+
+.message-card {
+  width: 100%;
+  background: #383838;
+  border: 1px solid #292929;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 13px;
+  color: #ffffff;
 }
 
 .greeting-wrapper {

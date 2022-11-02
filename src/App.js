@@ -4,6 +4,7 @@ import WalletCard from './components/WalletCard';
 import Navbar from './components/Navbar'
 import CharacterModal from "./components/CharacterModal";
 import CharacterData from './components/api';
+import MessageCard from './components/MessageCard'
 import './App.css';
 import abi from "./utils/SmartPortal.json";
 
@@ -43,7 +44,7 @@ export default function App() {
 
         <div className="content-wrapper">
           <div className="messages-container">
-          messages
+            <MessageCard />
           </div>
           <div className="wallet-container">
             <div className="greeting-wrapper">
