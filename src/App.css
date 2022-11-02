@@ -83,7 +83,10 @@ body,
 .connection-icon.active {
   color: #f0ff23;
   border: 1px solid #f5841f;
-  background: #1d1d1d;
+  background-image: url(./assets/images/metamask.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   box-shadow: 0 0 5px #ffcc23;
   text-shadow: 0 0 5px #ffcc23;
 }
@@ -106,14 +109,45 @@ body,
   border-left: 1px solid #383838;
 }
 
+.waves {
+  margin-top: 0;
+  padding: 0;
+  text-align: right;
+  color: #f5841f;
+  font-size: 12px;
+}
+
 .message-card {
+  display: flex;
   width: 100%;
   background: #383838;
   border: 1px solid #292929;
   border-radius: 3px;
   padding: 10px;
+  margin-bottom: 10px;
   font-size: 13px;
   color: #ffffff;
+}
+
+.msg-image-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  min-width: 60px;
+  transition: transform 0.8s;
+}
+
+.msg-image {
+  height: 100px;
+  margin: 0;
+}
+
+.message-content {
+  flex: 8;
+  padding: 0 10px;
+  border: 1px solid green;
 }
 
 .greeting-wrapper {
@@ -414,4 +448,8 @@ body,
 
 .character-card:hover .character-image {
   transform: scale(1.2);
+}
+
+.msg-image-wrapper:hover {
+  transform: scale(2);
 }

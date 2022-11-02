@@ -9,33 +9,71 @@ import './App.css';
 import abi from "./utils/SmartPortal.json";
 
 export default function App() {
+  const [errorMessage, setErrorMessage] = React.useState(null);
+  const [defaultAccount, setDefaultAccount] = React.useState(null);
   const [isConnected, setIsConnected] = React.useState(false);
-  const [modalIsOpen, setModalIsOpen] = React.useState(true);
+  const [modalIsOpen, setModalIsOpen] = React.useState(false);
   const [characters, setCharacters] = React.useState(CharacterData);
+  const [totalWaves, setTotalWaves] = React.useState(0);
   const contractAddress = "0x9E66864a9A43c21a970F15fc63A32d25B735BF94"; //contract deployment address
   const contractABI = abi.abi; //reference the abi content
+  const { ethereum } = window;
 
+  const findMetaMaskAccount = async () => {
+    try {
+      if (!ethereum) {
+        return null;
+      }
+  
+      const accounts = await ethereum.request({ method: "eth_accounts" });
+  
+      if (accounts.length !== 0) {
+        const account = accounts[0];
+        setIsConnected(true);
+        return account;
+      } else {
+        return null;
+      }
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
+  };
+
+  React.useEffect(() => {
+    const fetchWallet = async () => {
+      const account = await findMetaMaskAccount();
+      if (account !== null) {
+        setDefaultAccount(account);
+      }
+    }
+
+    fetchWallet();
+
+    const fetchData = async () => {
+      try {
+        if (ethereum) {
+          const provider = new ethers.providers.Web3Provider(ethereum);
+          const signer = provider.getSigner();
+          const wavePortalContract = new ethers.Contract(contractAddress, contractABI, signer);
+
+          let count = await wavePortalContract.getWaveStatus();
+          setTotalWaves(count.toNumber())
+        } else {
+          console.log("Ethereum object doesn't exist!");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    fetchData();
+  });
+  
   const viewCharacters = () => setModalIsOpen(!modalIsOpen);
 
   const wave = async () => {
-    try {
-      const { ethereum } = window;
-      // setModalIsOpen(!modalIsOpen)
-
-      if (ethereum) {
-        const provider = new ethers.providers.Web3Provider(ethereum);
-        const signer = provider.getSigner();
-        const wavePortalContract = new ethers.Contract(contractAddress, contractABI, signer);
-
-        let count = await wavePortalContract.getWaveStatus();
-        console.log("Retrieved total wave count...", count.toNumber());
-      } else {
-        console.log("Ethereum object doesn't exist!");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-}
+    // setModalIsOpen(!modalIsOpen)
+  }
   
   return (
     <main className="main-container">
@@ -44,7 +82,10 @@ export default function App() {
 
         <div className="content-wrapper">
           <div className="messages-container">
-            <MessageCard />
+            <p className="waves">{totalWaves} total waves</p>
+            <MessageCard
+              defaultAccount={defaultAccount}
+            />
           </div>
           <div className="wallet-container">
             <div className="greeting-wrapper">
@@ -60,9 +101,14 @@ export default function App() {
               </div>
 
               <WalletCard
+                defaultAccount={defaultAccount}
+                errorMessage={errorMessage}
                 viewCharacters={viewCharacters}
                 isConnected={isConnected}
                 setIsConnected={setIsConnected}
+                setDefaultAccount={setDefaultAccount}
+                setErrorMessage={setErrorMessage}
+                ethereum={ethereum}
               />
             </div>
           </div>

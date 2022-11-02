@@ -1,42 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
-function WalletCard({ viewCharacters, isConnected, setIsConnected}) {
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [defaultAccount, setDefaultAccount] = useState(null);
-  const { ethereum } = window;
+function WalletCard({
+  defaultAccount, errorMessage, viewCharacters, isConnected,
+  setIsConnected, setDefaultAccount, setErrorMessage, ethereum
+}) {
 
-
-  const findMetaMaskAccount = async () => {
-    try {
-      if (!ethereum) {
-        return null;
-      }
-  
-      const accounts = await ethereum.request({ method: "eth_accounts" });
-  
-      if (accounts.length !== 0) {
-        const account = accounts[0];
-        setIsConnected(true);
-        return account;
-      } else {
-        return null;
-      }
-    } catch (error) {
-      setErrorMessage(error.message);
-    }
-  };
-
-  useEffect(() => {
-    const fetchWallet = async () => {
-      const account = await findMetaMaskAccount();
-      if (account !== null) {
-        setDefaultAccount(account);
-      }
-    }
-
-    fetchWallet();
-  });
-  
   const connectWallet = async () => {
     try {
       if (!ethereum) {
