@@ -124,7 +124,7 @@ export default function App() {
 
         <div className="content-wrapper">
           <div className="messages-container">
-            <p className="waves">{totalWaves} total waves</p>
+            <p className="waves">{totalWaves} {totalWaves === 1 ? "message" : "messages"}</p>
             {
               !allWaves ?
                 <p className="no-messages">No messages.</p>
@@ -148,7 +148,7 @@ export default function App() {
 
               <div className="bio">
                 <p>I am Simo, a full stack developer aspiring to be a Smartchain developer.</p>
-                <p>Connect your Ethereum wallet and tag me with your favorite superhero or villain!</p>
+                <p>Connect your Ethereum wallet and pick your favorite superhero or villain!</p>
               </div>
 
               <WalletCard

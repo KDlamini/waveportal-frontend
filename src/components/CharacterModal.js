@@ -12,6 +12,8 @@ function CharacterModal({ wave, modalIsOpen, setModalIsOpen, characters, setChar
   const [audio2] = React.useState(new Audio(DcAudio));
 
   React.useEffect(() => {
+    audio.volume = 0.5;
+    audio2.volume = 0.5;
     writeMessage.status && writeMessage.studio === "Marvel" ? audio.play() : audio.pause();
     writeMessage.status && writeMessage.studio === "DC Comics" ? audio2.play() : audio2.pause();
   });

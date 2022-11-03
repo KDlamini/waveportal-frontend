@@ -17,7 +17,7 @@ function MessageForm({ wave, writeMessage, setWriteMessage, setModalIsOpen }) {
         <div className="message-form-wrapper">
             <img className="form-image character-image" src={image} alt="character"  />
             <form className="message-form" onSubmit={(e) => handleSubmit(e)}>
-            <p className="message-form-title">Say something to @<b>{name}</b></p>
+            <p className="message-form-title">Say something as @<b>{name}</b></p>
                 <textarea
                     type="text"
                     placeholder="Write new message"
