@@ -89,8 +89,6 @@ export default function App() {
     fetchData();
   }, [contractABI, ethereum, findMetaMaskAccount]);
 
-  console.log(allWaves);
-
   const viewCharacters = () => setModalIsOpen(!modalIsOpen);
 
   const wave = async (name, index, message) => {
