@@ -1,28 +1,30 @@
 import React from 'react'
-import Vision from '../assets/images/Vision.png'
+import CharacterData from './api';
 
-function MessageCard({ defaultAccount }) {
+function MessageCard({ data }) {
+  const { address, message, characterIndex, timestamp} = data;
+
   return (
     <div className="message-card">
       <div className="msg-image-wrapper">
-        <img className="msg-image" src={Vision} alt="iron-man"  />
+        <img className="msg-image" src={CharacterData[characterIndex].image} alt="movie character"  />
       </div>
       <div className="message-content">
         <p>
           <span role="img" aria-label="Emoji">💬</span>
           {' '}
-          This is where the message from the Blockchain will be.
+          {message}
         </p>
         <hr></hr>
         <p className="msg-details">
           <span role="img" aria-label="Emoji">✍🏾</span>
           {' '}
-          <b>Author: </b>{defaultAccount}
+          <b>Author: </b>{address}
         </p>
         <p className="msg-details">
           <span role="img" aria-label="Emoji">🕝</span>
           {' '}
-          <b>11:26:12 PM - Nov, 2, 2022</b>
+          <b>{timestamp.toString()}</b>
         </p>
       </div>
     </div>
