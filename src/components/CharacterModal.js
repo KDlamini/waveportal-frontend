@@ -4,18 +4,26 @@ import CharacterCard from './CharacterCard'
 import SearchBar from './SearchBar'
 import MessageForm from './MessageForm'
 import AvengersAudio from '../assets/audio/Avengers Theme.mp3'
+import DcAudio from '../assets/audio/Justice League intro.mp3'
 
 function CharacterModal({ wave, modalIsOpen, setModalIsOpen, characters, setCharacters }) {
   const [writeMessage, setWriteMessage] = React.useState({status: false});
   const [audio] = React.useState(new Audio(AvengersAudio));
+  const [audio2] = React.useState(new Audio(DcAudio));
 
   React.useEffect(() => {
-    writeMessage.status ? audio.play() : audio.pause();
+    writeMessage.status && writeMessage.studio === "Marvel" ? audio.play() : audio.pause();
+    writeMessage.status && writeMessage.studio === "DC Comics" ? audio2.play() : audio2.pause();
   });
 
   audio.addEventListener('ended', function () {
     audio.currentTime = 0;
     audio.play();
+  }, false);
+
+  audio2.addEventListener('ended', function () {
+    audio2.currentTime = 0;
+    audio2.play();
   }, false);
 
   const styles = {

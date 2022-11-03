@@ -12,7 +12,7 @@ function CharacterCard({ characters, setWriteMessage }) {
                         type="button"
                         key={name}
                         className={`character-card ${studio}`}
-                        onClick={() => setWriteMessage({status: true, name, index, image})}
+                        onClick={() => setWriteMessage({status: true, name, index, image, studio})}
                     >
                         <img className={`studio-logo ${studio}`} src={studioLogo} alt="studio-logo" />
             
