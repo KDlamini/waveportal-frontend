@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import CharacterModal from "./components/CharacterModal";
 import CharacterData from './components/api';
 import MessageCard from './components/MessageCard'
+import Spinner from './components/Spinner'
 import './App.css';
 import abi from "./utils/SmartPortal.json";
 
@@ -16,6 +17,7 @@ export default function App() {
   const [characters, setCharacters] = React.useState(CharacterData);
   const [allWaves, setAllWaves] = React.useState([]);
   const [totalWaves, setTotalWaves] = React.useState(0);
+  const [isLoading, setIsLoading] = React.useState(true);
   const contractAddress = "0x3e19c1747C4769F4C1C40d00C21D8108AE024dDf"; //contract deployment address
   const contractABI = abi.abi; //reference the abi content
   const { ethereum } = window;
@@ -71,7 +73,9 @@ export default function App() {
               timestamp: new Date(wave.timestamp * 1000),
             });
           });
-  
+
+
+          setIsLoading(false)
           setTotalWaves(count.toNumber())
           setAllWaves(wavesCleaned);
         } else {
@@ -96,7 +100,7 @@ export default function App() {
         const signer = provider.getSigner();
         const smartPortalContract = new ethers.Contract(contractAddress, contractABI, signer);
 
-        console.log(signer);
+        setIsLoading(true)
 
         let count = await smartPortalContract.getWaveStatus();
         console.log("Retrieved total wave count...", count.toNumber());
@@ -109,12 +113,30 @@ export default function App() {
 
         count = await smartPortalContract.getWaveStatus();
         setTotalWaves(count.toNumber())
+        setIsLoading(false)
       } else {
         console.log("Ethereum object doesn't exist!");
       }
     } catch (error) {
       console.log(error);
     }
+  }
+
+  const loading = () => <Spinner />;
+
+  const loadMessages = () => {
+    return (
+      !allWaves ?
+        <p className="no-messages">No messages.</p>
+      : allWaves.map((data) => {
+        return (
+          <MessageCard
+            key={data.timestamp.toString()}
+            data={data}
+          />
+        )
+      })
+    )
   }
   
   return (
@@ -126,16 +148,7 @@ export default function App() {
           <div className="messages-container">
             <p className="waves">{totalWaves} {totalWaves === 1 ? "message" : "messages"}</p>
             {
-              !allWaves ?
-                <p className="no-messages">No messages.</p>
-              : allWaves.map((data) => {
-                return (
-                  <MessageCard
-                    key={data.timestamp.toString()}
-                    data={data}
-                  />
-                )
-              })
+              isLoading ? loading() : loadMessages()
             }
           </div>
           <div className="wallet-container">
