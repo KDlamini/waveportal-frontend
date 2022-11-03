@@ -1,14 +1,27 @@
 import React from 'react'
+import { EditorState, convertToRaw } from "draft-js";
+import Editor from './Editor';
 
 function MessageForm({ wave, writeMessage, setWriteMessage, setModalIsOpen }) {
-    const [message, setMessage] = React.useState('');
+    // const [message, setMessage] = React.useState('');
+    const [editorState, setEditorState] = React.useState(
+        () => EditorState.createEmpty(),
+    );
     const { name, index, image } = writeMessage;
+
+    const extractText = () => {
+        const contentState = editorState.getCurrentContent();
+        const raw = convertToRaw(contentState);
+        return raw.blocks[0].text;
+    };
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const message = extractText()
 
         wave(name, index, message)
-        setMessage('')
+        setEditorState(() => EditorState.createEmpty())
         setWriteMessage({status: false})
         setModalIsOpen(false)
     }
@@ -17,7 +30,9 @@ function MessageForm({ wave, writeMessage, setWriteMessage, setModalIsOpen }) {
         <div className="message-form-wrapper">
             <img className="form-image character-image" src={image} alt="character"  />
             <form className="message-form" onSubmit={(e) => handleSubmit(e)}>
-            <p className="message-form-title">Say something as @<b>{name}</b></p>
+            <p className="message-form-title">Say something as @<b>{name.split(' ').join('_')}</b></p>
+                <Editor editorState={editorState} setEditorState={setEditorState}/>
+                {/*
                 <textarea
                     type="text"
                     placeholder="Write new message"
@@ -27,7 +42,7 @@ function MessageForm({ wave, writeMessage, setWriteMessage, setModalIsOpen }) {
                     required
                 >
                 </textarea>
-
+                */}
                 <div className="message-actions">
                     <button
                         type="submit"

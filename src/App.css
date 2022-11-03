@@ -185,12 +185,19 @@ body,
   padding: 50px;
 }
 
-.message-textarea {
+.message-textarea,
+.editor {
   border: none;
   outline: none;
   background: transparent;
-  margin-top: 20px;
+  margin-top: 10px;
   border-bottom: 1px solid #808080;
+  cursor: text;
+}
+
+.public-DraftEditorPlaceholder-inner {
+  margin: 0;
+  color: #6b6b6b;
 }
 
 .message-actions {
