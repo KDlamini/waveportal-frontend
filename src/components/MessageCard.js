@@ -11,9 +11,9 @@ function MessageCard({ data }) {
 
   return (
     <div className="message-card">
-      <div className="msg-image-wrapper">
+      <button className="msg-image-wrapper">
         <img className="msg-image" src={CharacterData[characterIndex].image} alt="movie character"  />
-      </div>
+      </button>
       <div className="message-content">
         <p>
           <span role="img" aria-label="Emoji">💬</span>
