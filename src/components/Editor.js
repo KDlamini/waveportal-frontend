@@ -7,16 +7,19 @@ import CharacterData from "./api";
 import "draft-js-mention-plugin/lib/plugin.css";
 
 const TextInput = ({editorState, setEditorState}) => {
-const mentions = CharacterData.map(({
-    image: avatar,
-    ...rest
-  }) => ({
-    avatar,
-    ...rest
-    })
-);
+const mentions = CharacterData.map(item => {
+  return {
+    avatar: item.image,
+    name: item.name.split(' ').join('_'),
+  };
+});
+console.log(mentions)
 const [suggestions, setSuggestions]= useState(mentions)
-const [mentionPlugin] = useState(createMentionPlugin());
+const [mentionPlugin] = useState(createMentionPlugin({
+  entityMutability: 'IMMUTABLE',
+  mentionPrefix: '@',
+  supportWhitespace: true,
+}));
 const { MentionSuggestions } = mentionPlugin;
 const plugins = [mentionPlugin];
 

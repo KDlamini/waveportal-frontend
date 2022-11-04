@@ -200,6 +200,11 @@ body,
   color: #6b6b6b;
 }
 
+.mention {
+  color: #4a85bb;
+  text-decoration: none;
+}
+
 .message-actions {
   display: flex;
   justify-content: flex-end;
