@@ -20,8 +20,6 @@ const [mentionPlugin] = useState(createMentionPlugin());
 const { MentionSuggestions } = mentionPlugin;
 const plugins = [mentionPlugin];
 
-console.log(mentions)
-
 const onSearchChange = ({ value }) => {
     setSuggestions(defaultSuggestionsFilter(value, mentions));
   };
