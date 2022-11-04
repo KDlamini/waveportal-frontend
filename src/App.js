@@ -90,7 +90,7 @@ export default function App() {
     }
 
     fetchData();
-  }, [contractABI, ethereum, findMetaMaskAccount]);
+  }, [contractABI, ethereum, findMetaMaskAccount, totalWaves]);
 
   const viewCharacters = () => setModalIsOpen(!modalIsOpen);
 
@@ -128,7 +128,7 @@ export default function App() {
     return (
       !allWaves ?
         <p className="no-messages">No messages.</p>
-      : allWaves.map((data) => {
+      : allWaves.reverse().map((data) => {
         return (
           <MessageCard
             key={data.timestamp.toString()}
@@ -154,10 +154,10 @@ export default function App() {
           <div className="wallet-container">
             <div className="greeting-wrapper">
               <div className="header">
-                Hello Blockchain Enthusiast! <span role="img" aria-label="Emoji">👋</span>
+                Hello There Comic Nerds! <span role="img" aria-label="Emoji">👋</span>
               </div>
 
-              <p className="greeting">Welcome to my Smart Portal</p>
+              <p className="greeting">Welcome to my Superhero Portal</p>
 
               <div className="bio">
                 <p>I am Simo, a full stack developer aspiring to be a Smartchain developer.</p>

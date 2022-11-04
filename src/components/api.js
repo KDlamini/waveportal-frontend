@@ -107,7 +107,7 @@ import Steppenwolf from '../assets/images/Steppenwolf.png';
 const CharacterData = [
     {
         studio: "Marvel",
-        name: 'Spider-Man',
+        name: 'Spiderman',
         type: "superhero",
         image: `${SpiderMan}`,
         logo: `${SpiderManLogo}`,

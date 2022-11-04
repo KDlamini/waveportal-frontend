@@ -1,8 +1,13 @@
 import React from 'react'
+import parse from 'html-react-parser';
 import CharacterData from './api';
 
 function MessageCard({ data }) {
   const { address, message, characterIndex, timestamp} = data;
+
+  const regex = /(\B@\w+)/g; 
+  const newMessage = message.replace(regex, '<span className="mention">$1</span>');
+
 
   return (
     <div className="message-card">
@@ -13,7 +18,7 @@ function MessageCard({ data }) {
         <p>
           <span role="img" aria-label="Emoji">💬</span>
           {' '}
-          {message}
+          {parse(newMessage)}
         </p>
         <hr></hr>
         <p className="msg-details">

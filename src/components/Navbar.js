@@ -3,7 +3,7 @@ import React from 'react'
 function Navbar({ isConnected }) {
   return (
     <div className="navbar">
-        <p className="logo">SMART PORTAL</p>
+        <p className="logo">SUPERHERO PORTAL</p>
         <div className="connection-status">
             <span className={isConnected ? "connection-icon active": "connection-icon"}></span>
             {' '}

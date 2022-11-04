@@ -125,13 +125,18 @@ body,
 .message-card {
   display: flex;
   width: 100%;
-  background: #383838;
+  background: #1b1c1d;
   border: 1px solid #292929;
   border-radius: 3px;
   padding: 10px;
   margin-bottom: 10px;
   font-size: 13px;
   color: #ffffff;
+}
+
+.message-card:nth-child(odd) {
+  flex-direction: row-reverse;
+  background: #1d1e25;
 }
 
 .msg-image-wrapper {
@@ -202,6 +207,7 @@ body,
 
 .mention {
   color: #4a85bb;
+  font-weight: 600;
   text-decoration: none;
 }
 
