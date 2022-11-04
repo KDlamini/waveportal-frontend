@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import Editor from "draft-js-plugins-editor";
 import createMentionPlugin, {
   defaultSuggestionsFilter
@@ -13,27 +13,33 @@ const mentions = CharacterData.map(item => {
     name: item.name.split(' ').join('_'),
   };
 });
-console.log(mentions)
-const [suggestions, setSuggestions]= useState(mentions)
-const [mentionPlugin] = useState(createMentionPlugin({
-  entityMutability: 'IMMUTABLE',
-  mentionPrefix: '@',
-  supportWhitespace: true,
-}));
-const { MentionSuggestions } = mentionPlugin;
-const plugins = [mentionPlugin];
 
-const onSearchChange = ({ value }) => {
-    setSuggestions(defaultSuggestionsFilter(value, mentions));
-  };
+const [suggestions, setSuggestions] = useState(mentions);
+
+const { MentionSuggestions, plugins } = useMemo(() => {
+  const mentionPlugin = createMentionPlugin({
+    mentionPrefix: '@',
+  });
+
+  const { MentionSuggestions } = mentionPlugin;
+  const plugins = [mentionPlugin];
+  return { plugins, MentionSuggestions };
+}, []);
+
+const onSearchChange = useCallback(({ value }) => {
+  setSuggestions(defaultSuggestionsFilter(value, mentions));
+}, [mentions]);
 
 return (
-    <div className="editor">
+    <div
+    className="editor"
+    >
         <Editor
+            editorKey={'editor'}
             editorState={editorState}
             onChange={setEditorState}
             plugins={plugins}
-            placeholder="Write a message with @mentions"
+            placeholder="Write a message e.g Hey @Spider-Man , use your spider ting to sense the bad guys!"
         />
         <MentionSuggestions
             onSearchChange={onSearchChange}
