@@ -39,7 +39,7 @@ return (
             editorState={editorState}
             onChange={setEditorState}
             plugins={plugins}
-            placeholder="Write a message e.g Hey @Spider-Man , use your spider ting to sense the bad guys!"
+            placeholder="Write a message e.g Hey @Spider-Man, use your spider ting to sense the bad guys!"
         />
         <MentionSuggestions
             onSearchChange={onSearchChange}

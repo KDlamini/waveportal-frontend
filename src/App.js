@@ -18,6 +18,7 @@ export default function App() {
   const [allWaves, setAllWaves] = React.useState([]);
   const [totalWaves, setTotalWaves] = React.useState(0);
   const [isLoading, setIsLoading] = React.useState(true);
+  const [loadingText, setLoadingText] = React.useState('');
   const contractAddress = "0x3e19c1747C4769F4C1C40d00C21D8108AE024dDf"; //contract deployment address
   const contractABI = abi.abi; //reference the abi content
   const { ethereum } = window;
@@ -59,6 +60,8 @@ export default function App() {
           const signer = provider.getSigner();
           const smartPortalContract = new ethers.Contract(contractAddress, contractABI, signer);
 
+          setLoadingText("Loading messages...")
+
           let count = await smartPortalContract.getWaveStatus();
           const waves = await smartPortalContract.getAllWaves();
           console.log("Retrieved total wave count...", count.toNumber());
@@ -79,7 +82,7 @@ export default function App() {
           setTotalWaves(count.toNumber())
           setAllWaves(wavesCleaned);
         } else {
-          console.log("Ethereum object doesn't exist!");
+          setLoadingText("Ethereum object doesn't exist!");
         }
       } catch (error) {
         console.log(error);
@@ -101,26 +104,25 @@ export default function App() {
         setIsLoading(true)
 
         let count = await smartPortalContract.getWaveStatus();
-        console.log("Retrieved total wave count...", count.toNumber());
         
         const waveTxn = await smartPortalContract.wave(name, index, message);
-        console.log("Mining...", waveTxn.hash);
+        setLoadingText(`Mining... <br/> Hash: ${waveTxn.hash}`);
 
         await waveTxn.wait();
-        console.log("Mined -- ", waveTxn.hash);
+        setLoadingText(`Mined... <br/> Hash: ${waveTxn.hash}`);
 
         count = await smartPortalContract.getWaveStatus();
         setTotalWaves(count.toNumber())
         setIsLoading(false)
       } else {
-        console.log("Ethereum object doesn't exist!");
+        setLoadingText("Ethereum object doesn't exist!");
       }
     } catch (error) {
       console.log(error);
     }
   }
 
-  const loading = () => <Spinner />;
+  const loading = () => <Spinner loadingText={loadingText}/>;
 
   const loadMessages = () => {
     return (
