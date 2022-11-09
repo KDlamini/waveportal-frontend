@@ -15,6 +15,7 @@ function WalletCard({
       const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
       setDefaultAccount(accounts[0]);
       setIsConnected(true);
+      window.location.reload()
     } catch (error) {
       setErrorMessage(error.message);
     }

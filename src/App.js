@@ -19,7 +19,7 @@ export default function App() {
   const [totalWaves, setTotalWaves] = React.useState(0);
   const [isLoading, setIsLoading] = React.useState(true);
   const [loadingText, setLoadingText] = React.useState('');
-  const contractAddress = "0x3e19c1747C4769F4C1C40d00C21D8108AE024dDf"; //contract deployment address
+  const contractAddress = "0x7a56cd71Ce5Dbe1F274F1900B0e2F68f1b0838aA"; //contract deployment address
   const contractABI = abi.abi; //reference the abi content
   const { ethereum } = window;
 
@@ -126,9 +126,8 @@ export default function App() {
 
   const loadMessages = () => {
     return (
-      !allWaves ?
-        <p className="no-messages">No messages.</p>
-      : allWaves.reverse().map((data) => {
+      allWaves.length ?
+        allWaves.reverse().map((data) => {
         return (
           <MessageCard
             key={data.timestamp.toString()}
@@ -136,6 +135,7 @@ export default function App() {
           />
         )
       })
+      : <p className="no-messages">No messages.</p>
     )
   }
   
