@@ -19,7 +19,7 @@ export default function App() {
   const [totalWaves, setTotalWaves] = React.useState(0);
   const [isLoading, setIsLoading] = React.useState(true);
   const [loadingText, setLoadingText] = React.useState('');
-  const contractAddress = "0x7a56cd71Ce5Dbe1F274F1900B0e2F68f1b0838aA"; //contract deployment address
+  const contractAddress = "0xA305CFB1017ff6a95574b5aD6a6796a1bF904558"; //contract deployment address
   const contractABI = abi.abi; //reference the abi content
   const { ethereum } = window;
 
@@ -33,6 +33,7 @@ export default function App() {
   
       if (accounts.length !== 0) {
         const account = accounts[0];
+        setDefaultAccount(account);
         setIsConnected(true);
         return account;
       } else {
@@ -43,54 +44,75 @@ export default function App() {
     }
   }, [ethereum]);
 
-  React.useEffect(() => {
-    const fetchWallet = async () => {
-      const account = await findMetaMaskAccount();
-      if (account !== null) {
-        setDefaultAccount(account);
-      }
-    }
+  const fetchData = React.useCallback(async () => {
+    try {
+      if (ethereum) {
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        const smartPortalContract = new ethers.Contract(contractAddress, contractABI, signer);
 
-    fetchWallet();
+        setLoadingText("Loading messages...")
 
-    const fetchData = async () => {
-      try {
-        if (ethereum) {
-          const provider = new ethers.providers.Web3Provider(ethereum);
-          const signer = provider.getSigner();
-          const smartPortalContract = new ethers.Contract(contractAddress, contractABI, signer);
+        let count = await smartPortalContract.getWaveStatus();
+        const waves = await smartPortalContract.getAllWaves();
+        console.log("Retrieved total wave count...", count.toNumber());
+        let wavesCleaned = [];
 
-          setLoadingText("Loading messages...")
-
-          let count = await smartPortalContract.getWaveStatus();
-          const waves = await smartPortalContract.getAllWaves();
-          console.log("Retrieved total wave count...", count.toNumber());
-          let wavesCleaned = [];
-
-          waves.forEach(wave => {
-            wavesCleaned.push({
-              address: wave.waver,
-              message: wave.message,
-              character: wave.character,
-              characterIndex: wave.characterIndex,
-              timestamp: new Date(wave.timestamp * 1000),
-            });
+        waves.forEach(wave => {
+          wavesCleaned.push({
+            address: wave.waver,
+            message: wave.message,
+            character: wave.character,
+            characterIndex: wave.characterIndex,
+            timestamp: new Date(wave.timestamp * 1000),
           });
+        });
 
 
-          setIsLoading(false)
-          setTotalWaves(count.toNumber())
-          setAllWaves(wavesCleaned);
-        } else {
-          setLoadingText("Ethereum object doesn't exist!");
-        }
-      } catch (error) {
-        console.log(error);
+        setIsLoading(false)
+        setTotalWaves(count.toNumber())
+        setAllWaves(wavesCleaned);
+      } else {
+        setLoadingText("Ethereum object doesn't exist!");
       }
+    } catch (error) {
+      console.log(error);
     }
+  }, [contractABI, ethereum])
 
+  React.useEffect(() => {
+    let wavePortalContract;
+
+    findMetaMaskAccount();
     fetchData();
-  }, [contractABI, ethereum, findMetaMaskAccount, totalWaves]);
+
+    const onNewWave = (from, character, characterIndex, message, timestamp) => {
+      setAllWaves(prevState => [
+        ...prevState,
+        {
+          address: from,
+          message: message,
+          character: character,
+          characterIndex: characterIndex,
+          timestamp: new Date(timestamp * 1000),
+        },
+      ]);
+    };
+  
+    if (ethereum) {
+      const provider = new ethers.providers.Web3Provider(ethereum);
+      const signer = provider.getSigner();
+  
+      wavePortalContract = new ethers.Contract(contractAddress, contractABI, signer);
+      wavePortalContract.on("NewWave", onNewWave);
+    }
+  
+    return () => {
+      if (wavePortalContract) {
+        wavePortalContract.off("NewWave", onNewWave);
+      }
+    };
+  }, [findMetaMaskAccount, fetchData, contractABI, ethereum]);
 
   const viewCharacters = () => setModalIsOpen(!modalIsOpen);
 
