@@ -73,9 +73,11 @@ export default function App() {
         setAllWaves(wavesCleaned);
       } else {
         setLoadingText("Ethereum object doesn't exist!");
+        setIsLoading(false)
       }
     } catch (error) {
-      console.log(error);
+      alert(error.message);
+      setIsLoading(false)
     }
   }, [contractABI, ethereum])
 
@@ -137,9 +139,11 @@ export default function App() {
         setIsLoading(false)
       } else {
         setLoadingText("Ethereum object doesn't exist!");
+        setIsLoading(false)
       }
     } catch (error) {
-      console.log(error);
+      alert(error.message);
+      setIsLoading(false)
     }
   }
 
