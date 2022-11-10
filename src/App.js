@@ -48,8 +48,7 @@ export default function App() {
     try {
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
-        const signer = provider.getSigner();
-        const smartPortalContract = new ethers.Contract(contractAddress, contractABI, signer);
+        const smartPortalContract = new ethers.Contract(contractAddress, contractABI, provider);
 
         setLoadingText("Loading messages...")
 
